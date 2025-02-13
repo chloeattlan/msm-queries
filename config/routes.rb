@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   get("/directors", { :controller => "directors", :action => "index" })
   get("/directors/:an_id", { :controller => "directors", :action => "show" })
   get("/movies/", { :controller => "movies", :action => "index" })
-  get("/movies/", { :controller => "movies", :action => "show" })
+  get("/movies/:an_id", { :controller => "movies", :action => "show" })
 end
