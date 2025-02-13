@@ -10,3 +10,62 @@
   <dd> <%= @director.bio %></dd>
   <dt> Image </dt>
   <dd> <img src = "<%=@director.image %>" width = 150> </dd>
+  <dt> Created at </dt>
+  <dd> <%= @director.created_at %></dd>
+  <dt> Updated at </dt>
+  <dd> <%= @director.updated_at %></dd>
+
+  <%= matches = Movie.where({ :director_id => @director.id})%>
+<table border="1">
+  <tbody><tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Image
+    </th>
+
+    <th>
+      Title
+    </th>
+
+    <th>
+      Year
+    </th>
+
+    <th>
+      Director
+    </th>
+
+    <th>
+    </th>
+  </tr>
+  <% matches.each do |movie| %>
+  <tr>
+    <td>
+      <td><%=movie.id%>
+    </td>
+
+    <td>
+      <img src = "<%=movie.image%>" width = "250">
+    </td>
+
+    <td>
+      <td><%=movie.title%>
+    </td>
+
+    <td>
+      <td><%=movie.year%>
+    </td>
+
+    <td>
+      <td><%=@director.name%>
+    </td>
+
+    <td>
+      <a href = "/movies/<%=movie.id%>"> Show details </a>
+    </td>
+  </tr>
+  <%end%>
+</table>
