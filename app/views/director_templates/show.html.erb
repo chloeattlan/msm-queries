@@ -1,0 +1,12 @@
+<h1> Director #<%= @director.id %> details</h1>
+<a href = "/directors"> Go back </a>
+
+<dl>
+  <dt> Name </dt>
+  <dd> <%= @director.name %> </dd>
+  <dt> DOB </dt>
+  <dd> <%= @director.dob %></dd>
+  <dt> Bio </dt>
+  <dd> <%= @director.bio %></dd>
+  <dt> Image </dt>
+  <dd> <img src = "<%=@director.image %>" width = 150> </dd>
